@@ -1,0 +1,43 @@
+import numpy as np 
+import random 
+import matplotlib.pyplot as plt 
+
+# Trying various distribution 
+
+#Randomdistribution
+
+RandomData = np.random.rand(10000)
+
+samples = [np.mean(random.choices(dataset,k=1000)) for _ in range(2000)]
+
+print("sample len is",len(samples))
+
+print("mean of all sample %.2f and standardDeviation %.5f respectively" %(np.mean(samples),np.std(samples)))
+
+print ("standard deviation is %.4f" %np.std(samples))
+
+plt.hist(samples)
+
+plt.show()
+
+
+# randomintegers distribution 
+
+DatasetInt = np.random.random_integers(1,10000,size=20000)
+
+samples = [np.mean(random.choices(DatasetInt,k=1000)) for _ in range(2000) ]
+
+plt.hist(samples)
+
+plt.show()
+
+# logistic distribution 
+
+
+DatasetInt = np.random.logistic(1,10000,size=20000)
+
+samples = [np.mean(random.choices(DatasetInt,k=1000)) for _ in range(2000) ]
+
+plt.hist(samples)
+
+plt.show()
